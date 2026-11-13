@@ -8,7 +8,7 @@ platform :android do
   desc "Build release apk"
   lane :build do
     gradle(task: 'assembleRelease')
-    sh "cp app/build/outputs/apk/release/app-release.apk ./Netspoofer_latest.apk"
-    puts "✅ Ready APK: #{Dir.pwd}/Netspoofer_latest.apk"
+    sh "cp app/build/outputs/apk/release/app-release.apk ./Taafeit_latest.apk"
+    puts "✅ Ready APK: #{Dir.pwd}/Taafeit_latest.apk"
   end
 end

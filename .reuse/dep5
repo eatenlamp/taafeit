@@ -1,5 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Netspoofer
+Upstream-Name: Taafeit
 Upstream-Contact: eatenlamp <eatenlamp@proton.me>
 
 Files: app/src/main/res/mipmap-*/ic_launcher.webp

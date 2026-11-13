@@ -4,7 +4,7 @@ SPDX-FileCopyrightText: 2026 2026 eatenlamp <eatenlamp@proton.me>
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
-# NetSpoofer 🛡️
+# Taafeit 🛡️
 
 Android network toolkit: scan, spoof, analyze.
 
@@ -64,9 +64,9 @@ A tool for understanding what's happening on your Wi-Fi. Combines network scanni
 
 ## 📥 Build
 
-git clone https://github.com/eatenlamp/Netspoofer.git
+git clone https://github.com/eatenlamp/Taafeit.git
 
-cd Netspoofer
+cd Taafeit
 
 # Open in Android Studio
 # Build :app
