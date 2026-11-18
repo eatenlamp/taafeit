@@ -5,13 +5,21 @@
 package taafeit.app
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import taafeit.app.core.AppSettings
+import taafeit.app.core.Notifications
+import taafeit.app.core.PrivilegeManager
+import taafeit.app.data.network.ShieldManager
 import timber.log.Timber
 
-@HiltAndroidApp
 class TaafeitApplication : Application() {
     override fun onCreate() {
         super.onCreate()
-        Timber.plant(Timber.DebugTree())
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+        AppSettings.init(this)
+        Notifications.ensureChannels(this)
+        ShieldManager.init(this)
+        PrivilegeManager.start(this)
     }
 }

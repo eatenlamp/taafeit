@@ -4,9 +4,7 @@
 
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.legacy.kapt)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.hilt)
 }
 
 android {
@@ -26,8 +24,8 @@ android {
         applicationId = "taafeit.app"
         minSdk = 29
         targetSdk = 35
-        versionCode = 3
-        versionName = "3.0"
+        versionCode = 4
+        versionName = "3.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -42,12 +40,11 @@ android {
             signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                          "proguard-rules.pro"
+                "proguard-rules.pro"
             )
         }
         debug {
             isMinifyEnabled = false
-            isShrinkResources = false
         }
     }
 
@@ -79,6 +76,7 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.runtime.compose)
     implementation(libs.androidx.activity.compose)
 
     implementation(platform(libs.androidx.compose.bom))
@@ -89,29 +87,17 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.compose.material.icons.extended)
 
-    implementation(libs.dagger.hilt.android)
-    kapt(libs.dagger.hilt.compiler)
-    implementation(libs.androidx.hilt.navigation.compose)
-
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    kapt(libs.room.compiler)
-
-    implementation(libs.okhttp)
-    implementation(libs.timber)
     implementation(libs.shizuku.api)
     implementation(libs.shizuku.provider)
+    implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.timber)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 
     testImplementation(libs.junit)
+    testImplementation(libs.json)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-}
-
-kapt {
-    correctErrorTypes = true
-    useBuildCache = true
 }

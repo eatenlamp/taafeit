@@ -1,56 +1,212 @@
 <resources>
     <string name="app_name">Taafeit</string>
+
+    <!-- Common -->
     <string name="apply">Применить</string>
-    <string name="reset">Сброс</string>
-    <string name="update_original">Обновить базу</string>
-    <string name="vpn_mask">Скрытность</string>
-    <string name="custom_model_hint">Имя профиля</string>
-    <string name="current_model">Профиль:</string>
-    <string name="current_model_unknown">Неизвестно</string>
-    <string name="status_ready">Статус: Защищено</string>
-    <string name="no_root">❌ Нет Root</string>
-    <string name="applied">✅ Применено</string>
-    <string name="settings">Настройки</string>
+    <string name="start">Старт</string>
+    <string name="stop">Стоп</string>
+    <string name="cancel">Отмена</string>
+    <string name="close">Закрыть</string>
+    <string name="refresh">Обновить</string>
+    <string name="unknown">Неизвестно</string>
     <string name="language">Язык</string>
+    <string name="language_system">Как в системе</string>
     <string name="english">English</string>
     <string name="russian">Русский</string>
-    <string name="spanish">Español</string>
-    <string name="german">Deutsch</string>
-    <string name="french">Français</string>
-    <string name="chinese">中文</string>
-    <string name="profiles">Профили</string>
-    <string name="device_spoofing">Эмуляция</string>
-    <string name="privacy_automation">Защита</string>
-    <string name="mock_location">Геопозиция</string>
-    <string name="device_info">Целостность</string>
+    <string name="copied_to_clipboard">Скопировано</string>
+    <string name="requires_root">Требуется root</string>
+
+    <!-- Navigation -->
     <string name="tab_spoofing">Личность</string>
-    <string name="tab_profiles">Сейф</string>
-    <string name="tab_automation">Экран</string>
+    <string name="tab_profiles">Хранилище</string>
+    <string name="tab_automation">Щит</string>
     <string name="tab_non_root">Приватность</string>
     <string name="tab_scan">Анализ</string>
     <string name="tab_info">Статус</string>
-    <string name="tab_settings">Конфиг</string>
+    <string name="tab_settings">Настройки</string>
 
-    <string name="security_guide">Гид по безопасности</string>
-    <string name="read_guide">Читать гид</string>
-    <string name="active_shield">Активный щит сети</string>
-    <string name="protection_engaged">Защита активна</string>
-    <string name="shield_idle">Щит в ожидании</string>
-    <string name="integrity_status">Целостность сети</string>
-    <string name="gateway_mac">Gateway MAC:</string>
-    <string name="consistent">Стабилен</string>
-    <string name="dns_privacy_doh">Приватность DNS (DoH)</string>
-    <string name="encrypt_dns">Шифровать запросы через провайдера</string>
-    <string name="select_provider">Выбор провайдера</string>
-    <string name="custom_dns_hint">Hostname (напр. dns.example.com)</string>
-    <string name="system_audit">Аудит системы</string>
-    <string name="security_status">Статус безопасности</string>
-    <string name="trusted_root">Доверенный (Root)</string>
-    <string name="limited_mode">Ограничен (Non-Root)</string>
-
+    <!-- Privileges -->
+    <string name="privilege_root">Root</string>
+    <string name="privilege_shizuku">Shizuku</string>
+    <string name="privilege_limited">Ограниченно</string>
+    <string name="privilege_description">Taafeit показывает ровно то, что разрешено на этом устройстве. Без имитации успеха.</string>
+    <string name="root_manager">Менеджер root</string>
+    <string name="shizuku_status_label">Shizuku:</string>
+    <string name="shizuku_running">запущен</string>
+    <string name="shizuku_not_running_short">не запущен</string>
+    <string name="shizuku_authorized">Авторизован</string>
+    <string name="shizuku_not_authorized">Нет доступа</string>
     <string name="shizuku_bridge">Мост Shizuku</string>
-    <string name="shizuku_authorized">Taafeit авторизован</string>
-    <string name="shizuku_status_label">Статус сервиса:</string>
-    <string name="profile_apply">Применить личность</string>
-    <string name="mock_location_instruction">Выберите Taafeit в настройках разработчика.</string>
+    <string name="shizuku_not_running">Shizuku не запущен</string>
+    <string name="shizuku_already_authorized">Shizuku уже авторизован</string>
+    <string name="shizuku_permission_failed">Не удалось запросить доступ к Shizuku</string>
+    <string name="authorize">Разрешить</string>
+    <string name="capability_system_props">Изменение системных свойств</string>
+    <string name="capability_secure_settings">Изменение защищённых настроек</string>
+    <string name="capability_netfilter">Правила файрвола</string>
+    <string name="capability_neighbors">Чтение таблицы соседей</string>
+    <string name="capability_mock_location">Подмена геолокации</string>
+    <string name="capability_notifications">Уведомления</string>
+
+    <!-- Identity -->
+    <string name="current_model">Текущая личность</string>
+    <string name="device_spoofing">Эмуляция личности</string>
+    <string name="target_model">Модель</string>
+    <string name="target_manufacturer">Производитель</string>
+    <string name="target_brand">Бренд</string>
+    <string name="target_device">Кодовое имя устройства</string>
+    <string name="target_fingerprint">Отпечаток сборки</string>
+    <string name="custom">Своё</string>
+    <string name="apply_identity">Применить личность</string>
+    <string name="restore_original">Вернуть исходную</string>
+    <string name="identity_applied">Личность применена и проверена</string>
+    <string name="identity_partial">Применено, но часть значений не сохранилась</string>
+    <string name="identity_failed">Личность не применена</string>
+    <string name="identity_root_required">Для смены личности нужен root (resetprop). Shizuku работает от пользователя shell и не может менять свойства ro.*.</string>
+    <string name="identity_warning">Смена свойств ro.* может сломать Play Integrity, банковские приложения и OTA-обновления. После перезагрузки значения вернутся.</string>
+    <string name="fingerprint_hint">vendor/device/device:версия/сборка/ид:тип/теги</string>
+    <string name="model_name_hint">Название модели</string>
+    <string name="manufacturer_name_hint">Производитель</string>
+
+    <!-- Vault -->
+    <string name="vault_title">Хранилище профилей</string>
+    <string name="vault_empty">Профилей пока нет</string>
+    <string name="vault_hint">Сохраните текущую личность и разворачивайте её позже.</string>
+    <string name="add_profile">Добавить профиль</string>
+    <string name="capture_current">Сохранить текущую личность</string>
+    <string name="profile_alias">Имя профиля</string>
+    <string name="vault_it">Сохранить</string>
+    <string name="profile_saved">Профиль сохранён</string>
+    <string name="profile_name_empty">Введите имя профиля</string>
+    <string name="profile_exists">Профиль с таким именем уже есть</string>
+    <string name="deploy">Развернуть</string>
+    <string name="delete">Удалить</string>
+    <string name="deployed">Развёрнуто: %1$s</string>
+    <string name="deploy_failed">Не удалось развернуть: %1$s</string>
+    <string name="export_profiles">Экспорт</string>
+    <string name="import_profiles">Импорт</string>
+    <string name="export_ok">Экспортировано профилей: %1$d</string>
+    <string name="export_failed">Не удалось экспортировать</string>
+    <string name="import_ok">Импортировано профилей: %1$d</string>
+    <string name="import_failed">Ошибка импорта: %1$s</string>
+    <string name="copy_json">Копировать как JSON</string>
+
+    <!-- Shield -->
+    <string name="active_shield">Сетевой щит</string>
+    <string name="shield_monitoring_only">Нет root и Shizuku: щит не может читать таблицу соседей, мониторинг недоступен.</string>
+    <string name="gateway">Шлюз</string>
+    <string name="gateway_mac">MAC шлюза</string>
+    <string name="interface_label">Интерфейс</string>
+    <string name="alerts_count">Тревоги</string>
+    <string name="last_check">Последняя проверка</string>
+    <string name="security_guide">Руководство по безопасности</string>
+    <string name="read_guide">Открыть руководство</string>
+    <string name="guide_dns">• Приватность DNS: включите Private DNS (DoH), чтобы исключить перехват и слежку провайдера.</string>
+    <string name="guide_shield">• Сетевой щит: включайте в публичных Wi-Fi, чтобы ловить ARP-спуфинг в реальном времени.</string>
+    <string name="guide_identity">• Ротация личности: периодически меняйте модель и производителя, чтобы усложнить корреляцию телеметрии.</string>
+    <string name="guide_vault">• Сохраните исходную личность в хранилище до изменений, чтобы можно было откатиться.</string>
+    <string name="shield_never_checked">Ещё не проверялось</string>
+    <string name="shield_state_idle">Щит выключен</string>
+    <string name="shield_state_stopped">Щит остановлен</string>
+    <string name="shield_state_starting">Запуск мониторинга…</string>
+    <string name="shield_state_unavailable">Нет root и Shizuku: мониторинг недоступен</string>
+    <string name="shield_state_no_network">Нет подключения по IPv4</string>
+    <string name="shield_state_waiting">Ожидание шлюза %1$s</string>
+    <string name="shield_state_baseline">Эталон зафиксирован: %1$s</string>
+    <string name="shield_state_alert">ТРЕВОГА: MAC шлюза изменился</string>
+    <string name="shield_state_secure">Безопасно: %1$s через %2$s</string>
+    <string name="shield_state_error">Ошибка: %1$s</string>
+    <string name="shield_alert_spoof_title">Возможен ARP-спуфинг</string>
+    <string name="shield_alert_spoof_text">MAC шлюза %1$s изменился с %2$s на %3$s.</string>
+    <string name="shield_alert_duplicate_title">Обнаружен дубликат MAC</string>
+    <string name="shield_alert_duplicate_text">%1$s используется %2$d адресами: %3$s</string>
+
+    <!-- Analyze -->
+    <string name="analyze_title">Аудит сети</string>
+    <string name="nodes_found">Найдено узлов: %1$d</string>
+    <string name="pulse_scan">Сканировать</string>
+    <string name="no_hosts">Узлы не найдены. Некоторые сети изолируют клиентов или блокируют ICMP.</string>
+    <string name="suspicious">Подозрительно</string>
+    <string name="isolate">Блокировать</string>
+    <string name="unisolate">Разблокировать</string>
+    <string name="isolated">Заблокировано: %1$s</string>
+    <string name="unisolated">Разблокировано: %1$s</string>
+    <string name="isolate_failed">Не удалось заблокировать: %1$s</string>
+    <string name="isolate_note">Блокировка работает, только если телефон раздаёт сеть (точка доступа) и есть root.</string>
+    <string name="scan_requires_privilege">Для сканирования нужен root или Shizuku: Android блокирует raw ICMP для обычных приложений.</string>
+    <string name="scan_no_network">Нет доступной сети IPv4.</string>
+    <string name="scan_no_range">Не удалось определить диапазон адресов этой сети.</string>
+    <string name="scan_no_neighbors">Никто не ответил. Некоторые сети блокируют ICMP между клиентами.</string>
+    <string name="duplicate_mac_addresses">Один MAC на %1$d IP-адресов</string>
+    <string name="os_linux_android">Linux / Android</string>
+    <string name="os_windows">Windows</string>
+    <string name="os_network_device">Сетевое устройство</string>
+    <string name="ttl_label">TTL</string>
+    <string name="vendor_label">Производитель</string>
+    <string name="hostname_label">Имя</string>
+    <string name="os_label">ОС (предположение)</string>
+    <string name="resolve_names">Определять имена хостов</string>
+
+    <!-- Privacy -->
+    <string name="dns_privacy_doh">Приватность DNS (Private DNS)</string>
+    <string name="encrypt_dns">Шифровать DNS-запросы через защищённый резолвер</string>
+    <string name="select_provider">Провайдер</string>
+    <string name="custom_dns_hint">Имя хоста (например dns.example.com)</string>
+    <string name="doh_current">Значение в системе: %1$s</string>
+    <string name="doh_failed">Private DNS не изменён: %1$s</string>
+    <string name="doh_requires_privilege">Для смены Private DNS нужен root или Shizuku.</string>
+    <string name="mock_location">Приватность геолокации</string>
+    <string name="mock_location_instruction">Выберите Taafeit в «Для разработчиков» → «Выбор приложения для подмены геолокации».</string>
+    <string name="mock_location_starting">Запуск подмены геолокации…</string>
+    <string name="mock_location_active">Подмена геолокации Taafeit активна</string>
+    <string name="mock_location_failed">Не удалось запустить подмену геолокации</string>
+    <string name="mock_location_not_selected">Taafeit не выбрано приложением для подмены геолокации</string>
+    <string name="mock_location_selected">Taafeit выбрано приложением для подмены геолокации</string>
+    <string name="developer_settings">Для разработчиков</string>
+    <string name="latitude">Широта</string>
+    <string name="longitude">Долгота</string>
+    <string name="invalid_coordinates">Введите корректные координаты</string>
+    <string name="update_position">Обновить позицию</string>
+    <string name="location_permission_required">Для работы подмены геолокации нужно разрешение на геолокацию</string>
+
+    <!-- Status -->
+    <string name="system_audit">Состояние системы</string>
+    <string name="security_status">Статус безопасности</string>
+    <string name="trusted_root">Доверенный (root)</string>
+    <string name="limited_mode">Ограниченный (без root)</string>
+    <string name="device_model">Модель устройства</string>
+    <string name="manufacturer">Производитель</string>
+    <string name="hardware">Железо</string>
+    <string name="android_version">Версия Android</string>
+    <string name="security_patch">Патч безопасности</string>
+    <string name="fingerprint">Отпечаток</string>
+    <string name="kernel">Ядро</string>
+    <string name="build_id">ID сборки</string>
+    <string name="diagnostics">Диагностика</string>
+    <string name="grant">Разрешить</string>
+    <string name="granted">Выдано</string>
+    <string name="not_granted">Не выдано</string>
+    <string name="app_version">Версия приложения</string>
+    <string name="oui_database">Офлайн-база префиксов</string>
+
+    <!-- Config -->
+    <string name="theme">Тема</string>
+    <string name="theme_system">Системная</string>
+    <string name="theme_light">Светлая</string>
+    <string name="theme_dark">Тёмная</string>
+    <string name="dynamic_color">Цвета Material You</string>
+    <string name="dynamic_color_hint">Если выключено, Taafeit использует собственную синюю палитру.</string>
+    <string name="reset_settings">Сбросить настройки</string>
+    <string name="settings_reset_done">Настройки сброшены</string>
+    <string name="about">О приложении</string>
+    <string name="source_code">Исходный код</string>
+    <string name="report_issue">Сообщить об ошибке</string>
+    <string name="license">Лицензия</string>
+    <string name="version">Версия</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_status">Статус Taafeit</string>
+    <string name="notification_channel_alerts">Сетевые тревоги</string>
+    <string name="notification_channel_location">Подмена геолокации</string>
+    <string name="notification_permission_denied">Уведомления остаются выключенными</string>
 </resources>

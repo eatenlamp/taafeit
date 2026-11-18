@@ -1,28 +1,22 @@
 <resources>
     <string name="app_name">Taafeit</string>
+
+    <!-- Common -->
     <string name="apply">Apply</string>
-    <string name="reset">Reset</string>
-    <string name="update_original">Update Base</string>
-    <string name="vpn_mask">Enhanced Stealth</string>
-    <string name="custom_model_hint">Profile name</string>
-    <string name="current_model">Active Profile:</string>
-    <string name="current_model_unknown">Unknown profile</string>
-    <string name="status_ready">Status: Secure</string>
-    <string name="no_root">❌ Restricted (No Root)</string>
-    <string name="applied">✅ Applied</string>
-    <string name="settings">Settings</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+    <string name="refresh">Refresh</string>
+    <string name="unknown">Unknown</string>
     <string name="language">Language</string>
+    <string name="language_system">System default</string>
     <string name="english">English</string>
     <string name="russian">Русский</string>
-    <string name="spanish">Español</string>
-    <string name="german">Deutsch</string>
-    <string name="french">Français</string>
-    <string name="chinese">中文</string>
-    <string name="profiles">Profiles</string>
-    <string name="device_spoofing">Emulation</string>
-    <string name="privacy_automation">Security Shield</string>
-    <string name="mock_location">Location Privacy</string>
-    <string name="device_info">Integrity</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="requires_root">Requires root</string>
+
+    <!-- Navigation -->
     <string name="tab_spoofing">Identity</string>
     <string name="tab_profiles">Vault</string>
     <string name="tab_automation">Shield</string>
@@ -31,26 +25,188 @@
     <string name="tab_info">Status</string>
     <string name="tab_settings">Config</string>
 
-    <string name="security_guide">Security Guide</string>
-    <string name="read_guide">Read Security Guide</string>
-    <string name="active_shield">Active Network Shield</string>
-    <string name="protection_engaged">Protection Engaged</string>
-    <string name="shield_idle">Shield Idle</string>
-    <string name="integrity_status">Network Integrity Status</string>
-    <string name="gateway_mac">Gateway MAC:</string>
-    <string name="consistent">Consistent</string>
-    <string name="dns_privacy_doh">DNS Privacy (DoH)</string>
-    <string name="encrypt_dns">Encrypt queries via secure provider</string>
-    <string name="select_provider">Select Provider</string>
-    <string name="custom_dns_hint">Hostname (e.g. dns.example.com)</string>
-    <string name="system_audit">System Audit</string>
-    <string name="security_status">Security Status</string>
-    <string name="trusted_root">Trusted (Root)</string>
-    <string name="limited_mode">Limited (Non-Root)</string>
+    <!-- Privileges -->
+    <string name="privilege_root">Root</string>
+    <string name="privilege_shizuku">Shizuku</string>
+    <string name="privilege_limited">Limited</string>
+    <string name="privilege_description">Taafeit reports exactly what this device allows. Nothing is faked.</string>
+    <string name="root_manager">Root manager</string>
+    <string name="shizuku_status_label">Shizuku:</string>
+    <string name="shizuku_running">running</string>
+    <string name="shizuku_not_running_short">not running</string>
+    <string name="shizuku_authorized">Authorized</string>
+    <string name="shizuku_not_authorized">Not authorized</string>
+    <string name="shizuku_bridge">Shizuku bridge</string>
+    <string name="shizuku_not_running">Shizuku is not running</string>
+    <string name="shizuku_already_authorized">Shizuku is already authorized</string>
+    <string name="shizuku_permission_failed">Unable to request Shizuku permission</string>
+    <string name="authorize">Authorize</string>
+    <string name="capability_system_props">Change system properties</string>
+    <string name="capability_secure_settings">Change secure settings</string>
+    <string name="capability_netfilter">Firewall rules</string>
+    <string name="capability_neighbors">Read neighbour table</string>
+    <string name="capability_mock_location">Mock location app</string>
+    <string name="capability_notifications">Notifications</string>
 
-    <string name="shizuku_bridge">Shizuku Bridge</string>
-    <string name="shizuku_authorized">Taafeit Authorized</string>
-    <string name="shizuku_status_label">Service Status:</string>
-    <string name="profile_apply">Apply Identity</string>
-    <string name="mock_location_instruction">Select Taafeit in Developer Options.</string>
+    <!-- Identity -->
+    <string name="current_model">Current identity</string>
+    <string name="device_spoofing">Identity emulation</string>
+    <string name="target_model">Model</string>
+    <string name="target_manufacturer">Manufacturer</string>
+    <string name="target_brand">Brand</string>
+    <string name="target_device">Device codename</string>
+    <string name="target_fingerprint">Build fingerprint</string>
+    <string name="custom">Custom</string>
+    <string name="apply_identity">Apply identity</string>
+    <string name="restore_original">Restore original</string>
+    <string name="identity_applied">Identity applied and verified</string>
+    <string name="identity_partial">Applied, but some values did not stick</string>
+    <string name="identity_failed">Identity was not applied</string>
+    <string name="identity_root_required">Changing the device identity needs root (resetprop). Shizuku runs as the shell user and cannot change ro.* properties.</string>
+    <string name="identity_warning">Changing ro.* properties can break Play Integrity, banking apps and OTA updates. Values are restored on reboot.</string>
+    <string name="fingerprint_hint">vendor/device/device:version/build/id:type/tags</string>
+    <string name="model_name_hint">Model name</string>
+    <string name="manufacturer_name_hint">Manufacturer</string>
+
+    <!-- Vault -->
+    <string name="vault_title">Profile vault</string>
+    <string name="vault_empty">No profiles stored yet</string>
+    <string name="vault_hint">Capture the current identity, then re-deploy it later.</string>
+    <string name="add_profile">Add profile</string>
+    <string name="capture_current">Capture current identity</string>
+    <string name="profile_alias">Profile name</string>
+    <string name="vault_it">Save</string>
+    <string name="profile_saved">Profile saved</string>
+    <string name="profile_name_empty">Enter a profile name</string>
+    <string name="profile_exists">A profile with this name already exists</string>
+    <string name="deploy">Deploy</string>
+    <string name="delete">Delete</string>
+    <string name="deployed">Deployed: %1$s</string>
+    <string name="deploy_failed">Deploy failed: %1$s</string>
+    <string name="export_profiles">Export</string>
+    <string name="import_profiles">Import</string>
+    <string name="export_ok">Profiles exported: %1$d</string>
+    <string name="export_failed">Export failed</string>
+    <string name="import_ok">Profiles imported: %1$d</string>
+    <string name="import_failed">Import failed: %1$s</string>
+    <string name="copy_json">Copy as JSON</string>
+
+    <!-- Shield -->
+    <string name="active_shield">Network shield</string>
+    <string name="shield_monitoring_only">No root and no Shizuku: the shield cannot read the neighbour table, so monitoring is unavailable.</string>
+    <string name="gateway">Gateway</string>
+    <string name="gateway_mac">Gateway MAC</string>
+    <string name="interface_label">Interface</string>
+    <string name="alerts_count">Alerts</string>
+    <string name="last_check">Last check</string>
+    <string name="security_guide">Security guide</string>
+    <string name="read_guide">Read the guide</string>
+    <string name="guide_dns">• DNS privacy: enable Private DNS (DoH) to stop upstream hijacking and ISP tracking.</string>
+    <string name="guide_shield">• Network shield: enable it on public Wi-Fi to catch ARP spoofing in real time.</string>
+    <string name="guide_identity">• Identity rotation: change model and manufacturer periodically to reduce telemetry correlation.</string>
+    <string name="guide_vault">• Store the original identity in the vault before changing anything, so you can roll back.</string>
+    <string name="shield_never_checked">Not checked yet</string>
+    <string name="shield_state_idle">Shield idle</string>
+    <string name="shield_state_stopped">Shield stopped</string>
+    <string name="shield_state_starting">Starting watchdog…</string>
+    <string name="shield_state_unavailable">No root/Shizuku: monitoring unavailable</string>
+    <string name="shield_state_no_network">No IPv4 network connected</string>
+    <string name="shield_state_waiting">Waiting for gateway %1$s</string>
+    <string name="shield_state_baseline">Baseline locked on %1$s</string>
+    <string name="shield_state_alert">ALERT: gateway MAC changed</string>
+    <string name="shield_state_secure">Secure: %1$s via %2$s</string>
+    <string name="shield_state_error">Error: %1$s</string>
+    <string name="shield_alert_spoof_title">Possible ARP spoofing</string>
+    <string name="shield_alert_spoof_text">Gateway %1$s changed MAC from %2$s to %3$s.</string>
+    <string name="shield_alert_duplicate_title">Duplicate MAC detected</string>
+    <string name="shield_alert_duplicate_text">%1$s — addresses: %2$d (%3$s)</string>
+
+    <!-- Analyze -->
+    <string name="analyze_title">Network audit</string>
+    <string name="nodes_found">Nodes identified: %1$d</string>
+    <string name="pulse_scan">Scan</string>
+    <string name="no_hosts">No hosts found. Some networks isolate clients or block ICMP.</string>
+    <string name="suspicious">Suspicious</string>
+    <string name="isolate">Block</string>
+    <string name="unisolate">Unblock</string>
+    <string name="isolated">Blocked: %1$s</string>
+    <string name="unisolated">Unblocked: %1$s</string>
+    <string name="isolate_failed">Block failed: %1$s</string>
+    <string name="isolate_note">Blocking works only when this phone provides the network (hotspot) and root is available.</string>
+    <string name="scan_requires_privilege">Scanning needs root or Shizuku: Android blocks raw ICMP for the app user.</string>
+    <string name="scan_no_network">No IPv4 network is available.</string>
+    <string name="scan_no_range">Unable to derive a host range for this network.</string>
+    <string name="scan_no_neighbors">No neighbours answered. Some networks block ICMP between clients.</string>
+    <string name="duplicate_mac_addresses">IP addresses sharing this MAC: %1$d</string>
+    <string name="os_linux_android">Linux / Android</string>
+    <string name="os_windows">Windows</string>
+    <string name="os_network_device">Network device</string>
+    <string name="ttl_label">TTL</string>
+    <string name="vendor_label">Vendor</string>
+    <string name="hostname_label">Name</string>
+    <string name="os_label">OS guess</string>
+    <string name="resolve_names">Resolve host names</string>
+
+    <!-- Privacy -->
+    <string name="dns_privacy_doh">DNS privacy (Private DNS)</string>
+    <string name="encrypt_dns">Encrypt DNS queries through a secure resolver</string>
+    <string name="select_provider">Provider</string>
+    <string name="custom_dns_hint">Hostname (for example dns.example.com)</string>
+    <string name="doh_current">System value: %1$s</string>
+    <string name="doh_failed">Private DNS was not changed: %1$s</string>
+    <string name="doh_requires_privilege">Changing Private DNS needs root or Shizuku.</string>
+    <string name="mock_location">Location privacy</string>
+    <string name="mock_location_instruction">Select Taafeit in Developer options → Select mock location app.</string>
+    <string name="mock_location_starting">Starting mock location…</string>
+    <string name="mock_location_active">Taafeit mock location is active</string>
+    <string name="mock_location_failed">Mock location could not start</string>
+    <string name="mock_location_not_selected">Taafeit is not selected as the mock location app</string>
+    <string name="mock_location_selected">Taafeit is the mock location app</string>
+    <string name="developer_settings">Developer options</string>
+    <string name="latitude">Latitude</string>
+    <string name="longitude">Longitude</string>
+    <string name="invalid_coordinates">Enter valid coordinates</string>
+    <string name="update_position">Update position</string>
+    <string name="location_permission_required">Location permission is required to keep mock location running</string>
+
+    <!-- Status -->
+    <string name="system_audit">System status</string>
+    <string name="security_status">Security status</string>
+    <string name="trusted_root">Trusted (root)</string>
+    <string name="limited_mode">Limited (no root)</string>
+    <string name="device_model">Device model</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="hardware">Hardware</string>
+    <string name="android_version">Android version</string>
+    <string name="security_patch">Security patch</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="kernel">Kernel</string>
+    <string name="build_id">Build ID</string>
+    <string name="diagnostics">Diagnostics</string>
+    <string name="grant">Grant</string>
+    <string name="granted">Granted</string>
+    <string name="not_granted">Not granted</string>
+    <string name="app_version">App version</string>
+    <string name="oui_database">Offline vendor prefixes</string>
+
+    <!-- Config -->
+    <string name="theme">Theme</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="dynamic_color">Material You colours</string>
+    <string name="dynamic_color_hint">When off, Taafeit uses its own blue palette.</string>
+    <string name="reset_settings">Reset settings</string>
+    <string name="settings_reset_done">Settings reset</string>
+    <string name="about">About</string>
+    <string name="source_code">Source code</string>
+    <string name="report_issue">Report an issue</string>
+    <string name="license">License</string>
+    <string name="version">Version</string>
+
+    <!-- Notifications -->
+    <string name="notification_channel_status">Taafeit status</string>
+    <string name="notification_channel_alerts">Network alerts</string>
+    <string name="notification_channel_location">Mock location</string>
+    <string name="notification_permission_denied">Notifications stay disabled</string>
 </resources>
