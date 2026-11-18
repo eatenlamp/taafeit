@@ -116,6 +116,14 @@ fun ShieldScreen(activity: MainActivity) {
             )
         }
 
+        if (shield.active) {
+            Text(
+                stringResource(R.string.shield_runs_while_open),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.outline,
+            )
+        }
+
         SectionCard(title = stringResource(R.string.diagnostics)) {
             InfoRow(stringResource(R.string.gateway), shield.gatewayIp ?: "—")
             InfoRow(stringResource(R.string.gateway_mac), shield.gatewayMac ?: "—")

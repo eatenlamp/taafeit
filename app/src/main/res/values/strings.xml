@@ -94,6 +94,7 @@
     <!-- Shield -->
     <string name="active_shield">Network shield</string>
     <string name="shield_monitoring_only">No root and no Shizuku: the shield cannot read the neighbour table, so monitoring is unavailable.</string>
+    <string name="shield_runs_while_open">Monitoring runs while Taafeit is open. Android may stop it once the app is swiped away.</string>
     <string name="gateway">Gateway</string>
     <string name="gateway_mac">Gateway MAC</string>
     <string name="interface_label">Interface</string>

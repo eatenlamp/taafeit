@@ -94,6 +94,7 @@
     <!-- Shield -->
     <string name="active_shield">Сетевой щит</string>
     <string name="shield_monitoring_only">Нет root и Shizuku: щит не может читать таблицу соседей, мониторинг недоступен.</string>
+    <string name="shield_runs_while_open">Мониторинг работает, пока Taafeit открыт. Android может остановить его, если закрыть приложение.</string>
     <string name="gateway">Шлюз</string>
     <string name="gateway_mac">MAC шлюза</string>
     <string name="interface_label">Интерфейс</string>
