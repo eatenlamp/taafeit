@@ -1,102 +1,124 @@
 <!--
-SPDX-FileCopyrightText: 2026 2026 eatenlamp <eatenlamp@proton.me>
+SPDX-FileCopyrightText: 2026 eatenlamp <eatenlamp@proton.me>
 
 SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 # Taafeit 🛡️
 
-Android network toolkit: scan, spoof, analyze.
+Android network and identity toolkit for your own devices and networks.
 
-A tool for understanding what's happening on your Wi-Fi. Combines network scanning, traffic analysis, and device identity spoofing. Works with or without root.
-
-# WARNING: THIS IS A BEGINNER PROJECT!
----
-
-## 🌠 Screenshots 
-
-<table>
-  <tr>
-    <td><img width="150" alt="Screenshot 1" src="https://github.com/user-attachments/assets/d128885a-0bb4-4a6b-b045-e6ddc4e6a36e" /></td>
-    <td><img width="150" alt="Screenshot 2" src="https://github.com/user-attachments/assets/d2fb3635-82ca-4972-9ac9-748adee22cfc" /></td>
-    <td><img width="150" alt="Screenshot 3" src="https://github.com/user-attachments/assets/984bdebd-52d0-426e-8be4-ab4d0859779b" /></td>
-    <td><img width="150" alt="Screenshot 4" src="https://github.com/user-attachments/assets/34e1fb7b-3d33-4c19-8316-47ba0be56372" /></td>
-  </tr>
-</table>
+Taafeit is honest about privileges: every screen tells you whether an action
+will run as **root**, through **Shizuku**, or not at all. Nothing is reported as
+"applied" until the result is read back from the system.
 
 ---
 
-## 📦 Features
+## ✨ Features
 
-### 📱 Device Spoofing (root)
-- Change model, manufacturer, build fingerprint with resetprop
-- Change Wi-Fi MAC address
-- Generates valid MAC addresses from database
+### 📱 Identity emulation (root)
+- Change `ro.product.model`, `manufacturer`, `brand`, `device`, `name` and
+  `ro.build.fingerprint` with `resetprop`
+- Ready-made presets plus a fully custom identity
+- Every value is verified after writing; partial failures are shown as such
+- Original values are captured automatically and can be restored with one tap
+- Values are temporary by design and return after a reboot
 
-### 🔍 Network Scanning
-- Fast parallel ping sweep
-- Hostname and vendor resolution
-- TTL-based OS detection (Windows / Linux / Android / iOS)
-- Nmap support (if installed)
+### 🗄️ Profile vault
+- Capture the current identity as a named profile
+- Deploy a profile with the same verified apply path
+- Export and import profiles as JSON through the system file picker
+- Legacy profiles from older versions are migrated automatically
 
-### ⚔️ ARP & MITM (root)
-- ARP spoofing with traffic redirection
-- HTTP/DNS capture via tcpdump
-- Global DNS redirect via iptables
-- One-tap device blocking
+### 🛡️ Network shield
+- Locks the gateway MAC as a baseline and alerts when it changes
+- Detects duplicate MAC addresses claiming several IPs
+- Notifications are throttled and only sent when permission is granted
+- With root it re-installs the trusted neighbour entry after an alert
+- Resets the baseline on network changes instead of false alarms
 
-### 🔒 Non-root
-- App/address blocking via VpnService
-- Detailed hardware and system info
+### 🔍 Network audit
+- One parallel ping sweep plus the kernel neighbour table (no 254 `su` calls)
+- Vendor lookup from a bundled offline OUI table
+- Reverse DNS and TTL-based OS guess
+- One-tap block/unblock through `iptables` (root + hotspot only)
+
+### 🔒 Privacy
+- Private DNS (DoH) switcher with a capability check and read-back
+- Mock location with a real foreground service, real state and a 1-second
+  refresh so apps keep receiving the position
+- Clear warnings when Taafeit is not selected as the mock location app
+
+### ⚙️ Status and configuration
+- Full capability report: system properties, secure settings, neighbour table,
+  firewall, mock location, notifications
+- Device, build, kernel and network diagnostics
+- Light / dark / system theme, Material You colours (off by default)
+- English and Russian, per-app language on Android 13+
 
 ---
 
-## 🛠 Tech Stack
+## 🔐 Privileges
 
-- Kotlin + coroutines
-- MVVM + Clean Architecture
-- Material 3 with Dynamic Colors
-- Room for history and profiles
-- OkHttp, custom sockets
+Taafeit uses a single privilege manager with three levels:
+
+| Level | How it runs | Can do |
+|-------|-------------|--------|
+| **Root** | `su` (Magisk, KernelSU, APatch) | Everything below plus `resetprop` and `iptables` |
+| **Shizuku** | Shizuku user service, uid 2000 (shell) | `getprop`, `settings`, `ip neigh`, `ping` |
+| **App** | Normal app uid | Read-only UI, mock location |
+
+Shizuku is auto-detected and bound when it is running and authorised. Root is
+preferred when both are available. The app never silently degrades a privileged
+action to the app uid.
+
+---
+
+## 🛠 Tech stack
+
+- Kotlin + coroutines + StateFlow
+- Jetpack Compose, Material 3
+- Navigation Compose
+- Shizuku API (AIDL user service)
 - Timber for logging
+- No Room, no Hilt, no OkHttp, and no internet permission
 
 ---
 
 ## 📥 Build
 
-git clone https://github.com/eatenlamp/Taafeit.git
+Requirements:
 
-cd Taafeit
+- Android 10+ (API 29+) on the device
+- JDK 21
+- Android SDK with compileSdk 37
 
-# Open in Android Studio
-# Build :app
+```bash
+git clone git@github.com:eatenlamp/taafeit.git
+cd taafeit
+./gradlew :app:assembleDebug
+```
 
-### Requirements
+Release builds read the signing material from environment variables:
 
-- Android 10+ (API 29+)
-- Root for spoofing, ARP, iptables
-- BusyBox — recommended
+```bash
+KEYSTORE_PASSWORD=... KEY_ALIAS=... KEY_PASSWORD=... ./gradlew :app:assembleRelease
+```
+
+`taafeit.jks` is not part of the repository and must never be committed.
 
 ---
 
 ## ⚖️ Disclaimer
 
-For educational and authorized testing only.
+For educational use and authorised testing only.
 
-Unauthorized use in networks you don't own is illegal.
-The developer is not responsible for how this tool is used.
-
----
-
-## 🌐 Languages
-
-- English
-- Русский
+Only use Taafeit on devices and networks you own or have explicit permission to
+test. Unauthorised interception or disruption of networks is illegal. The author
+is not responsible for misuse.
 
 ---
 
 ## 📄 License
 
-AGPL-3.0 or later
-
-- See License file for more information.
+AGPL-3.0-or-later. See the license file for details.
